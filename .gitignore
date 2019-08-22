@@ -1,0 +1,4 @@
+.directory
+out
+node_modules
+*.vsix

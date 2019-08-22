@@ -1,0 +1,91 @@
+{
+	"name": "crypto-ticker",
+	"displayName": "crypto-ticker",
+	"description": "Keep an eye on cryptocurrency prices as you code!",
+	"keywords": [
+		"bitcoin",
+		"ethereum",
+		"litecoin"
+	],
+	"version": "1.0.0",
+	"publisher": "calvert",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/robertcalvert/vscode-crypto-ticker"
+	},
+	"license": "MIT",
+	"icon": "images/icon.png",
+	"engines": {
+		"vscode": "^1.37.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": {
+			"properties": {
+				"crypto-ticker.interval": {
+					"type": "number",
+					"default": 60,
+					"description": "The refresh interval in seconds."
+				},
+				"crypto-ticker.period": {
+					"type": "string",
+					"default": "24HOUR",
+					"enum": [
+						"HOUR",
+						"24HOUR",
+						"DAY"
+					],
+					"description": "The opening period."
+				},
+				"crypto-ticker.higherColor": {
+					"type": "string",
+					"default": "lightgreen",
+					"description": "The color that indicates the symbol is trading higher."
+				},
+				"crypto-ticker.lowerColor": {
+					"type": "string",
+					"default": "coral",
+					"description": "The color that indicates the symbol is trading lower."
+				},
+				"crypto-ticker.tickers": {
+					"type": "array",
+					"default": [
+						{
+							"symbol": "BTC",
+							"currency": "USD",
+							"exchange": "CCCAGG",
+							"template": "{symbol} {price}"
+						},
+						{
+							"symbol": "ETH"
+						},
+						{
+							"symbol": "LTC"
+						}
+					],
+					"description": "The array of ticker definitions to display in the status bar."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.37.0",
+		"typescript": "^3.3.1",
+		"tslint": "^5.12.1"
+	},
+	"dependencies": {
+		"got": "^9.6.0"
+	}
+}
