@@ -37,7 +37,7 @@ export class Ticker {
         this.period = configuration.period;
         this.higherColor = configuration.higherColor;
         this.lowerColor = configuration.lowerColor;
-        
+
         // handle the first refresh call
         this.refresh();
     }
@@ -72,7 +72,7 @@ export class Ticker {
                     .replace('{high}', high)
                     .replace('{low}', low)
                     .replace('{change}', change)
-                    .replace('{percent}', percent + "%");
+                    .replace('{percent}', (percent >= 0 ? '+' : '') + percent + '%');
 
                 // set the status bar item colour based on the percent change
                 this.item.color = (percent < 0) ? this.lowerColor : this.higherColor;
