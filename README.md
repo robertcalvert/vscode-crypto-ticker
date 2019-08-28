@@ -4,13 +4,13 @@
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/calvert.crypto-ticker)][marketplace]
 [![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/calvert.crypto-ticker)][marketplace]
 [![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/calvert.crypto-ticker)][marketplace]
-[![Donate Bitcoin](https://img.shields.io/badge/donate-bitcoin-orange)](https://www.blockchain.com/btc/address/36gjpzeQtePfhU41VkM39XLUywpXVmtoKW)
+[![Donate Bitcoin](https://img.shields.io/badge/donate-bitcoin-orange)](https://www.blockchain.com/btc/payment_request?address=36gjpzeQtePfhU41VkM39XLUywpXVmtoKW)
 
 Welcome to crypto-ticker, a Visual Studio Code extension that allows you to keep an eye on cryptocurrency prices as you code!
 
 ### Default Settings
 
-The default settings provide a basic set of tickers for BTC, ETH and LTC. Prices are show in USD with colors based on the 24HOUR period.
+The default settings provide a set of basic tickers for BTC, ETH and LTC. The current prices are displayed in USD with colors based on the 24HOUR period.
 
 ![Example](https://github.com/robertcalvert/vscode-crypto-ticker/raw/master/images/default.png)
 
@@ -18,17 +18,16 @@ The default settings provide a basic set of tickers for BTC, ETH and LTC. Prices
 
 This extension uses [cryptocompare.com](https://min-api.cryptocompare.com/documentation) to retrieve the current cryptocurrency prices. Please consult their documentation for a list of supported *symbols*, *currencies* and *exchanges*.
 
-
-You can fully custom your tickers using the following settings.
+You can fully customize your tickers using the crypto-ticker extension settings.
 
 ```javascript
-// Specify the refresh interval
+// Specify the refresh interval in seconds
 "crypto-ticker.interval": 60,
 
 // Specify the opening period
 "crypto-ticker.period": "24HOUR",
 
-// Customize the high and low colors
+// Customize your high and low colors to suite your status bar
 "crypto-ticker.higherColor": "lightgreen",
 "crypto-ticker.lowerColor": "coral",
 
@@ -59,13 +58,13 @@ You can fully custom your tickers using the following settings.
 ]
 ```
 
-These custom settings create the following tickers:
+These example settings create the following tickers:
 
 ![Example](https://github.com/robertcalvert/vscode-crypto-ticker/raw/master/images/custom.png)
 
 ### Template Tags
 
-You can use tags within your template to customize the output as needed.
+You can use tags within your ticker template to customize the output as needed.
 
 ```javascript
 "template": "{symbol} {price}" // The default template
