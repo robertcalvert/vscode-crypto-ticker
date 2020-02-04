@@ -7,7 +7,7 @@
 		"ethereum",
 		"litecoin"
 	],
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"publisher": "calvert",
 	"repository": {
 		"type": "git",
@@ -28,6 +28,10 @@
 	"contributes": {
 		"configuration": {
 			"properties": {
+				"crypto-ticker.apiKey": {
+					"type": "string",
+					"description": "Your CryptoCompare API key."
+				},
 				"crypto-ticker.interval": {
 					"type": "number",
 					"default": 60,

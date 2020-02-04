@@ -18,10 +18,10 @@ export class Ticker {
     template: string;
 
     // the configuration properties
+    apiKey: string;
     period: string;
     higherColor: string;
     lowerColor: string;
-
 
     // construct a new ticker based on a ticker definition
     constructor(definition: any, priority: number) {
@@ -34,6 +34,7 @@ export class Ticker {
 
         // set the configuration properties
         const configuration: any = vscode.workspace.getConfiguration().get('crypto-ticker');
+        this.apiKey = configuration.apiKey;
         this.period = configuration.period;
         this.higherColor = configuration.higherColor;
         this.lowerColor = configuration.lowerColor;
@@ -53,8 +54,14 @@ export class Ticker {
     refresh() {
         (async () => {
             try {
+                // get the service URL, including the API key when present
+                let url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${this.symbol}&tsyms=${this.currency}&e=${this.exchange}`;
+                if (this.apiKey !== '') {
+                    url += `&api_key=${this.apiKey}`;
+                }
+
                 // call the service and parse the response
-                const response = await got(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${this.symbol}&tsyms=${this.currency}&e=${this.exchange}`);
+                const response = await got(url);
                 const object = JSON.parse(response.body);
 
                 // get the required values
