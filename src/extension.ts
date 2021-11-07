@@ -51,9 +51,11 @@ function constructor() {
 
 // refresh the tickers
 function refresh() {
-	tickers.forEach(ticker => {
-		ticker.refresh();
-	});
+	if (vscode.window.state.focused) {
+		tickers.forEach(ticker => {
+			ticker.refresh();
+		});
+	}
 }
 
 // this method is called when your extension is deactivated
