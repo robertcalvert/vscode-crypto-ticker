@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.3.0] - 2022-02-19
 ### Added
 - Support for Trusted Workspaces
+- Added a setting to limit refreshing to only when vscode has focus
 
 ### Change
 - Updated the dependencies

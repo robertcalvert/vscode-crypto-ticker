@@ -46,16 +46,20 @@ function constructor() {
 	});
 
 	// create the interval and call refresh ever x seconds
-	interval = setInterval(refresh, configuration.interval * 1000);
+	interval = setInterval(()=>refresh(configuration), configuration.interval * 1000);
 }
 
 // refresh the tickers
-function refresh() {
-	if (vscode.window.state.focused) {
-		tickers.forEach(ticker => {
-			ticker.refresh();
-		});
+function refresh(configuration: any) {
+	// exit early when refreshing is not required
+	if (configuration.onlyRefreshWhenFocused && !vscode.window.state.focused) {
+		return;
 	}
+
+	// iterate over the tickers and refresh
+	tickers.forEach(ticker => {
+		ticker.refresh();
+	});
 }
 
 // this method is called when your extension is deactivated

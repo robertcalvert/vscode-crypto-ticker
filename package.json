@@ -42,6 +42,11 @@
 					"default": 60,
 					"description": "The refresh interval in seconds."
 				},
+				"crypto-ticker.onlyRefreshWhenFocused": {
+					"type": "boolean",
+					"default": false,
+					"description": "Disable refreshing when the vscode window does not have focus."
+				},
 				"crypto-ticker.period": {
 					"type": "string",
 					"default": "24HOUR",
