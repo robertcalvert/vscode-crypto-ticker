@@ -25,6 +25,11 @@
 		"*"
 	],
 	"main": "./out/extension.js",
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": true
+		}
+	},
 	"contributes": {
 		"configuration": {
 			"properties": {
