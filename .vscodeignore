@@ -2,7 +2,8 @@
 src/**
 .gitignore
 .directory
-**/tsconfig.json
-**/tslint.json
+tsconfig.json
+.eslintrc
+.eslintignore
 **/*.map
 **/*.ts

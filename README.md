@@ -5,6 +5,8 @@
 [![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/calvert.crypto-ticker)][marketplace]
 [![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/calvert.crypto-ticker)][marketplace]
 [![Donate Bitcoin](https://img.shields.io/badge/donate-bitcoin-orange)](https://www.blockchain.com/btc/address/36gjpzeQtePfhU41VkM39XLUywpXVmtoKW)
+[![Donate Ethereum](https://img.shields.io/badge/donate-ethereum-lightgrey)](https://etherscan.io/address/0x3f2e6Ae4B4aFa94a51244Ad8997C0962D84Cb627)
+[![Donate Dogecoin](https://img.shields.io/badge/donate-dogecoin-yellowgreen)](https://dogechain.info/address/DBF7o5sTw2CVJ6usnVtwSdGhc5Eyy7Gdj1)
 
 Welcome to crypto-ticker, a Visual Studio Code extension that allows you to keep an eye on cryptocurrency prices as you code!
 

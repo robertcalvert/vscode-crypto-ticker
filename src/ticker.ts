@@ -4,7 +4,7 @@
 import * as vscode from 'vscode';
 
 // the web request handler
-const got = require('got');
+import got from 'got';
 
 // represents a ticker object
 export class Ticker {
